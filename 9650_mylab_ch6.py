@@ -1,4 +1,40 @@
 # 9650_mylab_ch6
+
+# 51360
+'''A file named numbers.txt contains an unknown number of lines, each consisting of a single positive integer. Write some code that reads through the file, ignoring those value that are not bigger than the maximum value read up to that point. 
+The numbers that are NOT ignored are added, and their sum stored in a variable called runsum.
+For example, if the sequence of integers in the file were "9 7 5 18 13 2 22 16" the code would ignore: 7, 5, 13, 2 and 16; it would add 9, 18, and 22, storing their sum, 49, into runsum.'''
+
+# solution1 using FOR
+numfile = open("numbers.txt", "r")
+runsum = 0
+maxvalue = 0
+
+for num in numfile:
+  if int(num) > maxvalue: # necessary to write > int
+    maxvalue = int(num) # necessary to write > int
+    runsum += int(num) # necessary to write > int
+    
+print(runsum)
+numfile.close()
+
+# soulution using WHILE
+numfile = open("numbers.txt", "r");
+runsum = 0
+maxvalue = 0
+num = numfile.readline()
+
+while num != "": # no space
+  if int(num) > maxvalue:
+    maxvalue = int(num)
+    runsum += int(num)
+   num = numfile.readline() # required
+
+print(runsum)
+numfile.close()
+             
+               
+               
 #71408
 '''Assume that a file containing a series of integers is named numbers.txt. Write
 a program that calculates the average of all the numbers stored in the file.'''
@@ -13,6 +49,7 @@ for num in outfile:
 
 average = total / count
 print(average)
+
 
 
 #71434
