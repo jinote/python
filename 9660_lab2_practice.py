@@ -32,4 +32,4 @@ print(pd.DataFrame({'Predictor': X.columns, 'coefficient': tayko_lm.coef_}))
 '''Coefficient explanation
 1) A positive coefficient: as the value of the independent variable(x) increese, 
 the mean of the dependent variable(y) also tends to increase.
-2) A negative coefficeint: as the independent variable increases, the dependent variable tends to decrease.
+2) A negative coefficeint: as the independent variable increases, the dependent variable tends to decrease.'''
