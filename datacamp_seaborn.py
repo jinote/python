@@ -81,3 +81,39 @@ sns.relplot(x='total_bill',
             col_order=['Thur', 'Fri', 'Sat', 'Sun'])
             
 plt.show()
+
+# Customizing scatter plots
+# subgroups with point size
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.relplot(x='total_bill',
+            y='tip',
+            data=tips,
+            kind='scatter',
+            size='size',
+            hue='size')
+plt.show()
+
+# subgroups with point style
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.relplot(x='total_bill',
+            y='tip',
+            data=tips,
+            kind='scatter',
+            hue='smoker',
+            style='smoker')
+
+plt.show()
+
+# changing point transparency
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# set alpha(transparency) to be between 0 and 1
+sns.relplot(x='total_bill',
+            y='tip',
+            data=tips,
+            kind='scatter',
+            alpha=0.4)
+plt.show()
