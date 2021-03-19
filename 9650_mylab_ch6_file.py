@@ -1,4 +1,12 @@
-# 9650_mylab_ch6
+# 9650_mylab_ch6_file input and output
+
+# practice
+line = "80\n"
+line.rstrip()
+#'80'
+
+int(line.rstrip())
+# 80
 
 # 51360
 '''A file named numbers.txt contains an unknown number of lines, each consisting of a single positive integer. Write some code that reads through the file, ignoring those value that are not bigger than the maximum value read up to that point. 
@@ -39,19 +47,83 @@ numfile.close()
 '''Assume that a file containing a series of integers is named numbers.txt. Write
 a program that calculates the average of all the numbers stored in the file.'''
 
-outfile = open('numbers.txt', 'r')
+#orginal answer
+infile = open('numbers.txt', 'r')
 total = 0
-count = 0 
-for num in outfile:
-  num = int(num) # required
-  total += num
-  count += 1
+counter = 0 
 
-average = total / count
-print(average)
+for line in infile:
+  line = int(line) # required
+  total = total + line
+  counter = counter + 1
 
 
+outfile.close()    
+print(total/counter)
 
+
+# In for loop, try and except
+try:
+  infile = open("number.txt", "r")
+except IOError:
+  print("Trouble opening file. try again")
+  
+total = 0
+counter = 0
+
+for line in infile:
+  try:
+    line = int(line)
+  except ValueError:
+    print("File must have only numbers. Try again.")
+  total = total + line
+  counter = counter + 1
+  
+infile.close()
+print(total/counter)
+
+
+# try includes for loop
+infile = open("number.txt", "r")
+
+total = 0
+counter = 0
+try: 
+  for line in infile:
+    line = int(line)
+    total = total + line
+    counter = counter + 1
+except ValueError:
+  print("file must have only numbers. Try again.")
+
+infile.close()
+print(total/counter)
+
+# the whole process in the try clause
+try: 
+  infile = open("numbers.txt", "r")
+  total = 0
+  counter = 0
+  
+  for line in infile:
+    line = int(line)
+    total = total + line
+    counter = counter + 1
+  
+  infile.close()
+  print(total/counter)
+  
+ except ValueError:
+  print("File must have only numbers. Try again")
+ 
+ except IOError:
+    print("Trouble opening file. Try again.")
+   
+ except: 
+    print("something else wen wrong.")
+
+    
+    
 #71434
 '''The Springfork Amateur Golf Club has a tournament every weekend. The club
 president has asked you to write a program that will read each player's name
@@ -75,6 +147,7 @@ Mike
 Jonathan
 23'''
 
+#soultion
 file = open('golf.txt', 'w')
 players_num = int(input('Enter number of players:'))
 for i in range(1, players_num+1):
@@ -87,5 +160,14 @@ for i in range(1, players_num+1):
   
 file.close()
 
+#practice
+outfile = open("golf.txt.", "w")
+num = int(input("Enter number of players:"))
 
+for i in range(1,num+1):
+  name = input("Enter name of player number " + str(i) + ":")
+  score = input("Enter score of player number " + str(i) + ":")
+  outfile.write(name + "\n") # Add new line
+  outfile.write(score + "\n") # Also add new line
+  
 
