@@ -69,7 +69,7 @@ my_dt = dict(my_dt) # convert it to dict
 
 # let's apply def and solution
 def get_phonebook():
-  infile = opne("phonebook.in", "r")
+  infile = open("phonebook.in", "r")
   mylist = infile.read().split('\n')
   my_dt = dict(zip(mylist[0::2], mylist[1::2]))
   infile.close()
@@ -106,7 +106,7 @@ def display_menu():
   print("2) add a new name and email address")
   print("3) change an email address")
   print("4) delete a name and email address")
-  choice = input("5) save address book and exit") # it's a choice
+  choice = input("5) save address book and exit:") # it's a choice
   return choice
 
 def main():
