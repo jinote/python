@@ -72,7 +72,8 @@ def main():
     search_girls
   else:
     print("invalid choice")
-    
+
+# Programming projects
 # 51287
 '''A geometric progression is a sequence of numbers in which each value (after the first) is obtained 
 by multiplying the previous value in the sequence by a fixed value called the common ratio. 
@@ -94,3 +95,23 @@ while total <= n:
   total = total * ratio
 
 print(geom_prog)
+
+# assignment
+# 51619
+'''Given that k refers to an int that is non-negative and that plist1 has been defined to be a list with at least k+1 elements, 
+write a statement that defines plist2 to be a new list that contains all the elements from index k of plist1 and beyond. 
+Do not modify plist1.'''
+# example
+k = 3
+plist1 = [1,2,3,4,5,6]
+plist2 = []
+for i in range(len(plist1)):
+  if i > k:
+    plist2.append(plist1[i])
+ 
+# 51280
+# 51608
+# 51287
+# 51295
+# 51262
+# 51264
