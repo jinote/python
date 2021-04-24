@@ -126,3 +126,19 @@ def main():
       break
 
 main()
+
+
+# 51832
+'''Given a variable, election_results, that is associated with a dictionary that maps candidate names to votes received, 
+associate the name of the candidate with the most votes with the variable winner.'''
+
+election_results = {'Bob': 87, 'Charles': 55, 'Doug': 99}
+winner = ""
+highest_votes = 0
+for k,v in elections_results.items():
+  if v > highest_votes:
+    winner = k
+    highest_votes = v
+    
+print(k)
+
